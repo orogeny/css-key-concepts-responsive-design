@@ -15,9 +15,10 @@
 }
 
 body {
-  background-color: var(--light);
-
   padding: 0 10px;
+
+  color: black;
+  background-color: var(--light);
 }
 
 h1 {
@@ -74,5 +75,16 @@ img {
 
   body > p:first-of-type {
     display: block;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color: var(--dark);
+  }
+
+  .card {
+    background-color: var(--teal);
   }
 }
