@@ -4,38 +4,75 @@
   --light: #e7ecef;
   --dark: #272932;
   --camel: #d8a47f;
+
+  font-family: "Roboto", sans-serif;
+
+  --text-size: 1;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   background-color: var(--light);
+
+  padding: 0 10px;
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: calc(2.25rem * var(--text-size));
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: calc(1.75rem * var(--text-size));
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: calc(1.25rem * var(--text-size));
 }
 
 p {
-  font-size: 1rem;
+  font-size: calc(1.125rem * var(--text-size));
+}
+
+body > p:first-of-type {
+  display: none;
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  align-content: start;
+  gap: 10px;
 }
 
 .card {
   padding: 10px;
-  margin: 10px;
+
+  border-radius: 8px;
+
+  flex: 1 1 24%;
+
+  background-color: var(--camel);
 }
 
 img {
   width: 16rem;
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    --text-size: 1.5;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    --text-size: 2;
+  }
+
+  body > p:first-of-type {
+    display: block;
+  }
 }
